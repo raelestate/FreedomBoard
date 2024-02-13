@@ -1,5 +1,4 @@
-import React, { ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
+import { ReactNode } from "react";
 
 interface ButtonProps {
   children: ReactNode;
@@ -9,7 +8,7 @@ interface ButtonProps {
   type?: () => void;
 }
 
-const Button = ({ children, onClick, onSelect, onSubmit }: ButtonProps) => {
+const Button = ({ children, onClick }: ButtonProps) => {
   return (
     <div className="container text-center">
       <button

@@ -1,5 +1,4 @@
-import React, { ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
+import { ReactNode } from "react";
 
 interface MessageProps {
   msg: ReactNode;
