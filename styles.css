@@ -1,0 +1,16 @@
+.sticky-note {
+    background-color: #ffd700;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.sticky-note-heading {
+    margin-top: 0;
+    color: #333;
+}
+
+.sticky-note-message {
+    color: #555;
+}
