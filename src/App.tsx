@@ -3,28 +3,29 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FreedomBoard from "./pages/FreedomBoard";
 import PublicBoard from "./pages/PublicBoard";
 import UserListPage from "./pages/UserListPage";
-import express from "express";
-import path from "path";
-const app = express();
+// import express from "express";
+// import path from "path";
 
-// Middleware to set MIME type for JavaScript files
-app.use((req: any, res: any, next: any): void => {
-  if (req.url.endsWith(".js")) {
-    res.setHeader("Content-Type", "application/javascript");
-  }
-  next();
-});
+// const app = express();
 
-// Serve static files
-app.use(express.static(path.join(__dirname, "public")));
+// // Middleware to set MIME type for JavaScript files
+// app.use((req: any, res: any, next: any): void => {
+//   if (req.url.endsWith(".js")) {
+//     res.setHeader("Content-Type", "application/javascript");
+//   }
+//   next();
+// });
 
-// Define your routes and other middleware here...
+// // Serve static files
+// app.use(express.static(path.join(__dirname, "public")));
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// // Define your routes and other middleware here...
+
+// // Start the server
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
 function App() {
   return (
     <BrowserRouter>
