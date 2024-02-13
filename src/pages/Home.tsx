@@ -1,4 +1,3 @@
-import React from "react";
 import NavBar from "../components/NavBar";
 import Message from "../components/Message";
 import Button from "../components/Button";
@@ -38,7 +37,6 @@ function Home() {
       </div>
     </>
   );
-  const newmsg = msg;
   return (
     <div>
       <NavBar />
