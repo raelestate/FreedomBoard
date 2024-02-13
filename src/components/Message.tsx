@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import react from "react";
 
 interface MessageProps {
-  msg: ReactNode;
+  msg: react.ReactNode;
 }
 const Message = ({ msg }: MessageProps) => {
   return (
