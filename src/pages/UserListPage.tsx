@@ -27,7 +27,7 @@ const UserListPage = () => {
     fetchUsers();
   }, []);
 
-  const handleDelete = async (id: any) => {
+  const handleDelete = async (id: string) => {
     try {
       await deleteDoc(doc(db, "users", id));
       setUsers(users.filter((user) => user.id !== id));
@@ -42,30 +42,17 @@ const UserListPage = () => {
       <NavBar />
       <h2 className="card-title fs-6">User List</h2>
       {users.map((user) => (
-        <div className="container mt-3">
+        <div key={user.id} className="container mt-3">
           <div className="card bg p-0 w-auto">
             <div className="card-body bg-warning">
               <h2 className="card-title fs-6">User List</h2>
-              <p key={user.id} className="fs-4">
-                {user.data.text}
-              </p>
+              <p className="fs-4">{user.data.text}</p>
               <Button onClick={() => handleDelete(user.id)}>Delete</Button>
             </div>
             <div className="card-footer bg-warning"></div>
           </div>
         </div>
       ))}
-      {/* {users.map((user) => (
-        <div className="container pt-4">
-          <h3 className="mb-4">User List</h3>
-          <p className="fs-4">
-            <p key={user.id} className="fs-4">
-              {user.data.text}
-              <Button onClick={() => handleDelete(user.id)}>Delete</Button>
-            </p>
-          </p>
-        </div>
-      ))} */}
     </>
   );
 };

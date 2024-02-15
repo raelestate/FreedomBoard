@@ -14,6 +14,15 @@ const NavBar = () => {
         >
           Freedom Board
         </a>
+        <a
+          id="hover-nav"
+          className="navbar-brand"
+          onClick={() => {
+            navigate("/PublicBoard");
+          }}
+        >
+          Public Board
+        </a>
       </div>
     </nav>
   );

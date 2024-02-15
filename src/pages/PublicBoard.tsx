@@ -233,7 +233,7 @@ const PublicBoard = () => {
   return (
     <>
       <NavBar />
-      <Button children="Create Another Note" onClick={handleClick} />
+      <Button children="Create Note" onClick={handleClick} />
       <div className="container justify-content-around">
         <div className="row">
           {user.map((userData, index) => (
