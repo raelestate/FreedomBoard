@@ -1,7 +1,5 @@
-import { createNavbar } from "./components/navbar.js";
-import { createStickyNote } from "./components/stickynote.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-
+import { createNavbar } from "navbar.js";
+import { createStickyNote } from "stickynote.js";
 import {
   getFirestore,
   collection,

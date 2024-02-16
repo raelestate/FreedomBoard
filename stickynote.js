@@ -1,13 +1,3 @@
-import { db } from "../src/db/db.js";
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-
-import {
-  getFirestore,
-  collection,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
-
 const getRandomWord = () => {
   const randomWords = [
     "slay",
@@ -194,39 +184,6 @@ const getRandomWord = () => {
   return randomWords[Math.floor(Math.random() * randomWords.length)];
 };
 
-// const fetchUserData = async () => {
-//   const db = getFirestore();
-//   const usersRef = collection(db, "users");
-
-//   try {
-//     const querySnapshot = await getDocs(usersRef);
-//     const userData = [];
-//     querySnapshot.forEach((doc) => {
-//       for (let i = userData; i < userData.length; i++) {
-//         userData.fetchUserData(user.text);
-//         // const div = document.createElement("div");
-//         // div.className = "card bg-warning p-0 w-auto";
-
-//         // const h2 = document.createElement("h2");
-//         // h2.className = "card-title fs-6";
-//         // h2.textContent = getRandomWord() + " wrote:";
-
-//         // const p = document.createElement("p");
-//         // p.className = "card-text";
-//         // p.textContent = userData(user.text);
-//       }
-//       userData.push({
-//         text: doc.data().text,
-//         timestamp: doc.data().timestamp.toDate(),
-//       });
-//     });
-//     console.log(userData);
-//     return userData;
-//   } catch (error) {
-//     console.error("Error fetching user data: ", error);
-//     return [];
-//   }
-// };
 const createStickyNote = (text, timestamp) => {
   const cardCont = document.createElement("div");
   cardCont.className = "card w-auto bg-warning";
