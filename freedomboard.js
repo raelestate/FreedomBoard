@@ -5,6 +5,8 @@ import {
   collection,
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
+import { db } from "./src/db/db.js";
+import { createFooter } from "./footer.js";
 const getRandomWord = () => {
   const randomWords = [
     "slay",
@@ -201,9 +203,6 @@ const fetchUserData = async () => {
     const querySnapshot = await getDocs(usersRef);
     const userData = [];
     querySnapshot.forEach((doc) => {
-      for (let i = userData; i < userData.length; i++) {
-        userData.fetchUserData(user.text);
-      }
       userData.push({
         text: doc.data().text,
         timestamp: doc.data().timestamp.toDate(),
@@ -218,33 +217,41 @@ const fetchUserData = async () => {
 };
 const renderPage = async () => {
   const userData = await fetchUserData();
+
+  const container = document.createElement("div");
+  container.className = "container";
+
+  const row = document.createElement("div");
+  row.className = "row";
+  const userCount = userData.length;
+  const userCountText = document.createElement("p");
+  userCountText.className = "fs-5";
+  userCountText.textContent = `There are ${userCount} notes that are posted.`;
+  container.appendChild(userCountText);
+
+  const postButton = document.createElement("button");
+  postButton.textContent = "Post a note";
+  postButton.className = "btn btn-warning mt-1";
+  postButton.addEventListener("click", () => {
+    window.location.href = "postboard.html";
+  });
+  container.appendChild(postButton);
+  container.appendChild(row); // Append the row to the container
+
   userData.forEach((user) => {
     const stickyNote = createStickyNote(user.text, user.timestamp);
-    appRoot.appendChild(stickyNote);
+    const col = document.createElement("div");
+    col.className = "col p-2";
+    col.appendChild(stickyNote);
+    row.appendChild(col); // Append the col to the row
   });
+
+  appRoot.appendChild(container);
+  const foot = createFooter();
+  appRoot.appendChild(foot); // Append the container to the appRoot
 };
 
-const container = document.createElement("div");
-container.className = "container";
-
-const row = document.createElement("div");
-row.className = "row";
-
-const col = document.createElement("div");
-col.className = "col";
-
-container.appendChild(row);
-row.appendChild(col);
 const nav = createNavbar();
 appRoot.appendChild(nav);
 
-/*
-Structure sa page
-Navbar
-
-Stickynote
-    - dapat naka sud sa container
-    - container > row > col 
-    -col contents:
-        - renderstickynote
-*/
+renderPage();

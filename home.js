@@ -1,6 +1,7 @@
 import { createButton } from "./button.js";
 import { createNavbar } from "./navbar.js";
 import { createMessage } from "./message.js";
+import { createFooter } from "./footer.js";
 
 const appRoot = document.getElementById("root");
 
@@ -43,3 +44,6 @@ const button = createButton({ onClick: clickBtn, children: "Let's Proceed" });
 appRoot.appendChild(nav);
 appRoot.appendChild(messageElement);
 appRoot.appendChild(button);
+
+const foot = createFooter();
+appRoot.appendChild(foot);

@@ -1,24 +1,36 @@
-// function createTextArea() {
-//   const message = `
-//     <div class="container">
-//       <h6 class="display-6 text-center p-5 pt-5">What's on your mind?</h6>
-//       <p class="text-muted fs-5 text-start">
-//         Characters written: {charCount}/2000
-//       </p>
-//       <div class="form-floating">
-//         <textarea
-//           class=form-control ${charCount >= 2000 ? "text-danger" : ""}}
-//           placeholder="Express your thoughts here."
-//           style={divStyle}
-//           value={text}
-//           maxLength={2000} // Set maximum character length
-//           onChange={handleChange}
-//         ></textarea>
-//         <div class="pt-4">
-//           <Button children="Post to board" onClick={handleClick} />
-//         </div>
-//       </div>
-//     </div>`;
-// }
+// createTextArea.js
+function createTextArea() {
+  const container = document.createElement("div");
+  container.className = "container p-5"; // Add p-5 spacing
 
-// export { createTextArea };
+  const heading = document.createElement("h6");
+  heading.className = "display-6 text-center pt-5"; // Add pt-5 spacing
+  heading.textContent = "What's on your mind?";
+  container.appendChild(heading);
+
+  const charCountParagraph = document.createElement("p");
+  charCountParagraph.className = "text-muted fs-5 text-start";
+  charCountParagraph.textContent = "Characters written: 0/600";
+  container.appendChild(charCountParagraph);
+
+  const textArea = document.createElement("textarea");
+  textArea.className = "form-control";
+  textArea.placeholder = "Express your thoughts here.";
+  textArea.style.minHeight = "200px";
+  textArea.style.maxHeight = "400px";
+  textArea.style.resize = "none";
+  textArea.maxLength = 600;
+  textArea.addEventListener("input", function () {
+    charCountParagraph.textContent = `Characters written: ${textArea.value.length}/600`;
+    if (textArea.value.length >= 600) {
+      textArea.classList.add("text-danger");
+    } else {
+      textArea.classList.remove("text-danger");
+    }
+  });
+  container.appendChild(textArea);
+
+  return container;
+}
+
+export { createTextArea };

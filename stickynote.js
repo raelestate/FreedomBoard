@@ -199,14 +199,24 @@ const createStickyNote = (text, timestamp) => {
   p.className = "card-text text-start pt-3 fw-light";
   p.textContent = `${text}`;
 
+  const formattedDate = timestamp.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+  const formattedTime = timestamp.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
   const h6 = document.createElement("h6");
   h6.className = "fs-6 fw-light text-start text-muted pt-3";
-  h6.textContent = `Posted on ${timestamp}`;
+  h6.textContent = `Posted on ${formattedDate} at ${formattedTime}`;
 
   cardCont.appendChild(card);
   card.appendChild(h2);
-  h2.appendChild(p);
-  p.appendChild(h6);
+  card.appendChild(p);
+  card.appendChild(h6);
 
   return cardCont;
 };
