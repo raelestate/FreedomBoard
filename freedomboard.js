@@ -1,5 +1,5 @@
-import { createNavbar } from "navbar.js";
-import { createStickyNote } from "stickynote.js";
+import { createNavbar } from "./navbar.js";
+import { createStickyNote } from "./stickynote.js";
 import {
   getFirestore,
   collection,

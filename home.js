@@ -1,6 +1,6 @@
-import { createButton } from "button.js";
-import { createNavbar } from "navbar.js";
-import { createMessage } from "message.js";
+import { createButton } from "./button.js";
+import { createNavbar } from "./navbar.js";
+import { createMessage } from "./message.js";
 
 const appRoot = document.getElementById("root");
 
