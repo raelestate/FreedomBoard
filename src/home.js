@@ -6,7 +6,7 @@ import { createStickyNote } from "../components/stickynote.js";
 const appRoot = document.getElementById("root");
 
 const clickBtn = () => {
-  window.location.href = "../src/pages/freedomboard.html";
+  window.location.href = "/freedomboard.html";
 };
 
 const welcomeMessage = `
