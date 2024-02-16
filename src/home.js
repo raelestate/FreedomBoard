@@ -1,7 +1,6 @@
 import { createButton } from "../components/button.js";
 import { createNavbar } from "../components/navbar.js";
 import { createMessage } from "../components/message.js";
-import { createStickyNote } from "../components/stickynote.js";
 
 const appRoot = document.getElementById("root");
 
