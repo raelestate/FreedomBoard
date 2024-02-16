@@ -1,11 +1,11 @@
-import { db } from "./src/db/db.js";
+import { db } from "../db/db.js";
 import {
   getFirestore,
   addDoc,
   getDocs,
   collection,
 } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
-import { createStickyNote } from "./components/stickynote.js";
+import { createStickyNote } from "../../components/stickynote.js";
 
 const appRoot = document.getElementById("publicboard");
 

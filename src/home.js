@@ -5,7 +5,7 @@ import { createMessage } from "../components/message.js";
 const appRoot = document.getElementById("root");
 
 const clickBtn = () => {
-  window.location.href = "/freedomboard.html";
+  window.location.href = "freedomboard.html";
 };
 
 const welcomeMessage = `
