@@ -6,6 +6,8 @@ import {
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
 import { db } from "./src/db/db.js";
+import { createNavbar } from "./navbar.js";
+import { createFooter } from "./footer.js";
 
 const appRoot = document.getElementById("postboard");
 
@@ -53,5 +55,10 @@ const button = createButton({
   className: "p-5",
 }); // Add p-5 spacing to button
 const textareaContainer = createTextArea();
+
+const nav = createNavbar();
+appRoot.appendChild(nav);
 appRoot.appendChild(textareaContainer);
 appRoot.appendChild(button);
+const foot = createFooter();
+appRoot.appendChild(foot);

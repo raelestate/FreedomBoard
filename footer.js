@@ -9,7 +9,7 @@ const createFooter = () => {
   listItem.className = "nav-item";
 
   const link = document.createElement("a");
-  link.href = "/";
+  link.href = "/index.html";
   link.className = "nav-link px-2 text-body-secondary";
   link.textContent = "Home";
 

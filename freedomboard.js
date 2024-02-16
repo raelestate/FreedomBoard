@@ -215,6 +215,7 @@ const fetchUserData = async () => {
     return [];
   }
 };
+
 const renderPage = async () => {
   const userData = await fetchUserData();
 
@@ -223,11 +224,20 @@ const renderPage = async () => {
 
   const row = document.createElement("div");
   row.className = "row";
-  const userCount = userData.length;
-  const userCountText = document.createElement("p");
-  userCountText.className = "fs-5";
-  userCountText.textContent = `There are ${userCount} notes that are posted.`;
-  container.appendChild(userCountText);
+
+  let userCountText = "";
+  if (userData.length === 0) {
+    userCountText = "You're the first one here.";
+  } else if (userData.length === 1) {
+    userCountText = "Only 1 note posted, please populate this board <3.";
+  } else {
+    userCountText = `There are ${userData.length} notes that are posted.`;
+  }
+
+  const userCountTextElement = document.createElement("p");
+  userCountTextElement.className = "fs-5";
+  userCountTextElement.textContent = userCountText;
+  container.appendChild(userCountTextElement);
 
   const postButton = document.createElement("button");
   postButton.textContent = "Post a note";
