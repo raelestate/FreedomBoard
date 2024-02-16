@@ -237,7 +237,6 @@ col.className = "col";
 
 container.appendChild(row);
 row.appendChild(col);
-col.appendChild(renderPage());
 const nav = createNavbar();
 appRoot.appendChild(nav);
 
