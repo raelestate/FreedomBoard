@@ -205,16 +205,6 @@ const fetchUserData = async () => {
     querySnapshot.forEach((doc) => {
       for (let i = userData; i < userData.length; i++) {
         userData.fetchUserData(user.text);
-        const div = document.createElement("div");
-        div.className = "card bg-warning p-0 w-auto";
-
-        const h2 = document.createElement("h2");
-        h2.className = "card-title fs-6";
-        h2.textContent = getRandomWord() + " wrote:";
-
-        const p = document.createElement("p");
-        p.className = "card-text";
-        p.textContent = userData(user.text);
       }
       userData.push({
         text: doc.data().text,
@@ -232,25 +222,24 @@ const renderPage = async () => {
   const userData = await fetchUserData();
   userData.forEach((user) => {
     const stickyNote = createStickyNote(user.text, user.timestamp);
-
-    const container = document.createElement("div");
-    container.className = "container p-3 text-start";
-
-    const row = document.createElement("div");
-    row.className = "row";
-
-    const col = document.createElement("div");
-    col.className = "col p-4";
-    col.appendChild(stickyNote);
-    col.appendChild(stickyNote);
-    row.appendChild(col);
-    container.appendChild(row);
     appRoot.appendChild(stickyNote);
   });
 };
+
+const container = document.createElement("div");
+container.className = "container";
+
+const row = document.createElement("div");
+row.className = "row";
+
+const col = document.createElement("div");
+col.className = "col";
+
+container.appendChild(row);
+row.appendChild(col);
+col.appendChild(renderPage());
 const nav = createNavbar();
 appRoot.appendChild(nav);
-renderPage();
 
 /*
 Structure sa page

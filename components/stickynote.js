@@ -228,9 +228,6 @@ const getRandomWord = () => {
 //   }
 // };
 const createStickyNote = (text, timestamp) => {
-  const marginContainer = document.createElement("div");
-  marginContainer.className = "container";
-
   const cardCont = document.createElement("div");
   cardCont.className = "card w-auto bg-warning";
 
@@ -253,9 +250,8 @@ const createStickyNote = (text, timestamp) => {
   card.appendChild(h2);
   h2.appendChild(p);
   p.appendChild(h6);
-  marginContainer.appendChild(cardCont);
 
-  return marginContainer;
+  return cardCont;
 };
 
 export { createStickyNote };
