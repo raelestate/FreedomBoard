@@ -1,7 +1,6 @@
 import { createButton } from "./button.js";
 import { createTextArea } from "./createTextArea.js";
 import {
-  getFirestore,
   collection,
   addDoc,
   serverTimestamp,
@@ -22,6 +21,7 @@ const clickBtn = async () => {
       console.log("Document written with ID: ", docRef.id);
       window.location.href = "freedomboard.html";
     } catch (error) {
+      alert("Enter something");
       console.error("Error adding document: ", error);
     }
   }
