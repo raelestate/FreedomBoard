@@ -4,7 +4,7 @@ import Message from "../components/Message";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import db from "../db/firebase-config.tsx";
+import db from "../db/firebase-config";
 import Footer from "../components/Footer";
 
 function FreedomBoard() {

@@ -10,7 +10,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/FreedomBoard" element={<FreedomBoard />} />
         <Route path="/PublicBoard" element={<PublicBoard />} />
-        <Route path="/Admin" element={<UserListPage />} />
+        <Route path="/TTTTTTTTT" element={<UserListPage />} />
       </Routes>
     </BrowserRouter>
   );
