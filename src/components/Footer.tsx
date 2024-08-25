@@ -7,6 +7,16 @@ function Footer() {
             Home
           </a>
         </li>
+        <li className="nav-item">
+          <a href="/FreedomBoard" className="nav-link px-2 text-body-secondary">
+            Freedom Board
+          </a>
+        </li>
+        <li className="nav-item">
+          <a href="/PublicBoard" className="nav-link px-2 text-body-secondary">
+            Public Board
+          </a>
+        </li>
       </ul>
       <p className="text-center text-body-secondary">© RaelEstate</p>
     </footer>

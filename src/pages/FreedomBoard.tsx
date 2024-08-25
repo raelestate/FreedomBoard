@@ -45,7 +45,7 @@ function FreedomBoard() {
   };
 
   const handleChange = (e: any) => {
-    const newText = e.target.value.slice(0, 2000); // Limit text to 2000 characters
+    const newText = e.target.value.slice(0, 200); // Limit text to n characters
     setText(newText);
   };
 
@@ -53,15 +53,15 @@ function FreedomBoard() {
     <div className="container">
       <h6 className="display-6 text-center p-5 pt-5">What's on your mind?</h6>
       <p className="text-muted fs-5 text-start">
-        Characters written: {charCount}/2000
+        Characters written: {charCount}/200
       </p>
       <div className="form-floating">
         <textarea
-          className={`form-control ${charCount >= 2000 ? "text-danger" : ""}`}
+          className={`form-control ${charCount >= 200 ? "text-danger" : ""}`}
           placeholder="Express your thoughts here."
           style={divStyle}
           value={text}
-          maxLength={2000} // Set maximum character length
+          maxLength={200} // Set maximum character length
           onChange={handleChange}
         ></textarea>
         <div className="pt-4">
