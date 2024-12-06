@@ -2,7 +2,6 @@ import NavBar from "../components/NavBar";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
-import VideoComponent from "../components/VideoComponent"; // Import the video component
 
 function Home() {
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ function Home() {
       <div id="slogan_area">
         <div className="container">
           <div className="slogan_video">
-            <VideoComponent />
+            <video src="./assets/video.mp4"></video>
           </div>
           <div className="slogan_info">
             <h2>
