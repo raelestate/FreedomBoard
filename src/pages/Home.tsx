@@ -1,50 +1,36 @@
 import NavBar from "../components/NavBar";
-import Message from "../components/Message";
 import Button from "../components/Button";
-import * as reactRouterDom from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import VideoComponent from "../components/VideoComponent"; // Import the video component
 
 function Home() {
-  const newLocal = reactRouterDom.useNavigate();
-  const navigate = newLocal;
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/FreedomBoard");
+    navigate("/freedom-board");
   };
-  const mess = (
-    <>
-      <div className="container pb-5">
-        <h6 className="display-6 text-center">
-          Welcome to <br></br>
-          <b>FreedomBoard!</b>
-          <br></br>
-          <span className="display-6 pt-4" style={{ fontSize: 20 }}>
-            <span className="blockquote-footer">
-              by{" "}
-              <cite title="Source Title">
-                <a href="https://github.com/raelestate" target="_blank">
-                  RaelEstate
-                </a>
-              </cite>
-            </span>
-          </span>
-        </h6>
-      </div>
-      <div className="container">
-        <h6 className="display-6 text-center">
-          Where you can express anything <br></br>
-          <b>Anonymously!</b>
-        </h6>
-      </div>
-    </>
-  );
+
   return (
     <div>
       <NavBar />
-      <Message msg={mess} />
-      <Button children="Get Started" onClick={handleClick} />
+      <div id="slogan_area">
+        <div className="container">
+          <div className="slogan_video">
+            <VideoComponent />
+          </div>
+          <div className="slogan_info">
+            <h2>
+              Your Space, Your Voice, <span>No Names.</span>
+            </h2>
+            <p>An open platform to share your thoughts freely and anonymously.</p>
+            <Button children="Get Started" onClick={handleClick} />
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );
 }
+
 export default Home;

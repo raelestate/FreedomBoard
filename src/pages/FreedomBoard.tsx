@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
-import Message from "../components/Message";
-import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import db from "../db/firebase-config";
-import Footer from "../components/Footer";
 
 function FreedomBoard() {
   const navigate = useNavigate();
@@ -13,68 +10,55 @@ function FreedomBoard() {
   const [charCount, setCharCount] = useState(0);
 
   useEffect(() => {
-    // Calculate character count on every change
     setCharCount(text.length);
   }, [text]);
 
   const handleClick = async () => {
-    // Add text and timestamp to Firestore if character count is below limit
-    if (charCount <= 2000) {
+    if (charCount <= 300) {
       try {
         const docRef = await addDoc(collection(db, "users"), {
           text: text,
           timestamp: serverTimestamp(),
-          time: new Date().toLocaleString(), // Current time
+          time: new Date().toLocaleString(),
         });
         console.log("Document written with ID: ", docRef.id);
-        // Navigate to PublicBoard
-        navigate("/PublicBoard");
+        navigate("/public-board");
       } catch (error) {
         console.error("Error adding document: ", error);
       }
     } else {
-      // Handle character limit exceeded
       alert(
-        "Character limit exceeded! Please reduce the text to 2000 characters or less."
+        "Character limit exceeded! Please reduce the text to 300 characters or less."
       );
     }
   };
 
-  const divStyle = {
-    height: 400,
-  };
-
   const handleChange = (e: any) => {
-    const newText = e.target.value.slice(0, 200); // Limit text to n characters
+    const newText = e.target.value.slice(0, 300);
     setText(newText);
   };
 
   const message = (
-    <div className="container">
-      <h6 className="display-6 text-center p-5 pt-5">What's on your mind?</h6>
-      <p className="text-muted fs-5 text-start">
-        Characters written: {charCount}/200
-      </p>
-      <div className="form-floating">
-        <textarea
-          className={`form-control ${charCount >= 200 ? "text-danger" : ""}`}
-          placeholder="Express your thoughts here."
-          style={divStyle}
-          value={text}
-          maxLength={200} // Set maximum character length
-          onChange={handleChange}
-        ></textarea>
-        <div className="pt-4">
-          <Button children="Post to board" onClick={handleClick} />
+        <div id="form_area">
+        <div className="container">
+            <div className="form_holder">
+                <div className="form_info">
+                    <h2>What's on your mind?</h2>
+                    <p>Characters written: {charCount}/300</p>
+                </div>
+                <div className="form_floating">
+                    <textarea className={`form-control ${charCount >= 300 ? "text-danger" : ""}`} placeholder="Express your thoughts here." value={text} maxLength={300} onChange={handleChange}></textarea>
+                    <a className="cust_btn" href="" children="Post to board" onClick={handleClick}></a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+    
   );
   return (
     <div>
       <NavBar />
-      <Message msg={message} />
-      <Footer />
+       {message}
     </div>
   );
 }

@@ -1,25 +1,14 @@
 function Footer() {
+
   return (
-    <footer className="py-3 my-4 pt-5">
-      <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-        <li className="nav-item">
-          <a href="/" className="nav-link px-2 text-body-secondary">
-            Home
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="/FreedomBoard" className="nav-link px-2 text-body-secondary">
-            Freedom Board
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="/PublicBoard" className="nav-link px-2 text-body-secondary">
-            Public Board
-          </a>
-        </li>
-      </ul>
-      <p className="text-center text-body-secondary">© RaelEstate</p>
-    </footer>
+    <footer>
+      <div className="container">
+        <div className="footer_info">
+          <a href="https://www.github.com/raelestate">© RaelEstate</a>
+        </div>
+      </div>
+
+  </footer>
   );
 }
 
