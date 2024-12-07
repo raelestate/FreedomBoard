@@ -5,14 +5,12 @@ interface ButtonProps {
   onSelect?: () => void;
   onSubmit?: () => void;
   type?: () => void;
+  className?: ()=> void;
 }
 
 const Button = ({ children, onClick }: ButtonProps) => {
   return (
-    <div>
-      <a href="" className="cust_btn" onClick={onClick} type="submit">{children}</a>
-    </div>
-      
+      <a href="" className="cust_btn" onClick={onClick} type="submit">{children}</a>      
   );
 };
 export default Button;

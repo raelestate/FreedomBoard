@@ -19,7 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Replace occurrences of "Freedom Board" with bold text
         document.body.innerHTML = document.body.innerHTML.replace(/\bFreedom Board\b/g, '<strong class="cust-bold">Freedom Board</strong class="cust-bold">');
+        document.body.innerHTML = document.body.innerHTML.replace(/\bRael\b/g, '<strong class="cust-bold">Rael</strong class="cust-bold">');
+        document.body.innerHTML = document.body.innerHTML.replace(/\bEstate\b/g, '<strong class="cust-bold">Estate</strong class="cust-bold">');
+        document.body.innerHTML = document.body.innerHTML.replace(/\bRael Estate\b/g, '<strong class="cust-bold">Rael Estate</strong class="cust-bold">');
     }
+    const currentUrl = window.location.pathname;
+    const links = document.querySelectorAll('ul li a');
+  
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentUrl) {
+        link.classList.add('current-page');
+        }
+  });
 });
 
 window.addEventListener("load", () => {

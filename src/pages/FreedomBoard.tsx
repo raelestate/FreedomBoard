@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import db from "../db/firebase-config";
+import Footer from "../components/Footer";
 
 function FreedomBoard() {
   const navigate = useNavigate();
@@ -59,6 +60,7 @@ function FreedomBoard() {
     <div>
       <NavBar />
        {message}
+       <Footer />
     </div>
   );
 }

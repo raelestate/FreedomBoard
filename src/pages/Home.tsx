@@ -16,7 +16,7 @@ function Home() {
       <div id="slogan_area">
         <div className="container">
           <div className="slogan_video">
-            <video src="./assets/video.mp4"></video>
+            <video autoPlay loop muted src="./assets/video.mp4"></video>
           </div>
           <div className="slogan_info">
             <h2>

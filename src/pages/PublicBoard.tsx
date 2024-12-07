@@ -3,38 +3,18 @@ import NavBar from "../components/NavBar";
 import StickyNote from "../components/StickyNote";
 import { collection, getDocs } from "firebase/firestore";
 import db from "../db/firebase-config.tsx";
-import { DocumentData } from "firebase/firestore";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import * as reactRouterDom from "react-router-dom";
+
 const getRandomWord = () => {
   const randomWords = [
-    'Liam Parker', 'Emma Johnson', 'Noah Davis', 'Olivia Brown', 'James Wilson',
-    'Isabella Garcia', 'Benjamin Lee', 'Sophia Martinez', 'Lucas Anderson', 'Ava Hernandez',
-    'Henry Miller', 'Mia Robinson', 'Alexander Clark', 'Amelia Lewis', 'Ethan Walker',
-    'Charlotte Young', 'William Hall', 'Evelyn King', 'Sebastian Wright', 'Harper Scott',
-    'Mason Adams', 'Aria Carter', 'Logan Nelson', 'Grace Mitchell', 'Jacob Moore',
-    'Scarlett Perez', 'Michael White', 'Chloe Turner', 'Elijah Taylor', 'Ella Rivera',
-    'Daniel Harris', 'Victoria Gonzalez', 'Jackson Flores', 'Luna Baker', 'Aiden Reed',
-    'Camila Adams', 'Matthew Collins', 'Zoe Stewart', 'David Morris', 'Penelope Rogers',
-    'Samuel Hughes', 'Layla Cook', 'Joseph Phillips', 'Riley Peterson', 'John Ward',
-    'Lily Cooper', 'Andrew Ross', 'Aurora Bailey', 'Gabriel Sanders', 'Ellie Powell',
-    'Joshua Price', 'Nora Howard', 'Christopher Butler', 'Hazel Cox', 'Ryan Bennett',
-    'Madison Foster', 'Luke Richardson', 'Stella Simmons', 'Jack Henderson', 'Violet Long',
-    'Anthony Perry', 'Savannah Hughes', 'Dylan Coleman', 'Sophie Brooks', 'Julian Butler',
-    'Paisley Watson', 'Adam Jenkins', 'Elliana Griffin', 'Leo Fisher', 'Aaliyah Bryant',
-    'Owen Graham', 'Elena Murphy', 'Nathan Torres', 'Lydia Harper', 'Wyatt Rivera',
-    'Addison Bell', 'Aaron Ramirez', 'Audrey Griffin', 'Caleb Martin', 'Maya Scott',
-    'Isaac Kelly', 'Brooklyn Morales', 'Miles Cooper', 'Genesis Henderson', 'Nicholas Hayes',
-    'Hannah Stewart', 'Hunter Diaz', 'Emilia Simmons', 'Connor Lewis', 'Autumn Torres',
-    'Carter Nelson', 'Kennedy Gonzales', 'Charles Barnes', 'Lucy Powell', 'Eli Wood',
-    'Samantha Reyes', 'Robert Clark', 'Ruby Patterson', 'Thomas Ward', 'Paisley Bailey'
-  ];
+    'Jenna Cole', 'Jack Collins', 'Nadia Cole', 'Theena Muran', 'Patio Toya', 'Molly Vogue', 'Nila Spaghetti', 'Benny R. Gyn', 'Beth Logins',  'Lilly Vogue', 'Christiano Bo', 'Ma. Kathy', 'Augustino Lagaspag', 'Sally Xi', 'Bethy Bartolome', 'Ernie Wan', 'Vina Ruruth', 'Kung Lee Li Gayaka', 'Sophie Ling','Ma. Ang Heet','Drink Water','Dia Rhea','Felon Knee','Auntie Sexy','Fillet Mignon','Dhrecxzeus','Sincerely Yours ‘98','Dzwyrgh','Hitler Manila','Ghrowizard','Yghngjhyll','Fort McKinley','Godis Withus','Rizalino','Danilo','Jejomar','Covid Bryant','Coviduvidapdap Dela Cruz'];
+  
   
   return randomWords[Math.floor(Math.random() * randomWords.length)];
 };
 
-// Function to format timestamp
 const formatTimestamp = (timestamp: any) => {
   const date = timestamp.toDate();
   const now = new Date();
@@ -53,18 +33,18 @@ const formatTimestamp = (timestamp: any) => {
 };
 
 const PublicBoard = () => {
-  const [user, setUser] = useState<DocumentData[]>([]);
+  const [user, setUser] = useState<any[]>([]);
   const navigate = reactRouterDom.useNavigate();
 
   const handleClick = () => {
-    navigate("/FreedomBoard");
+    navigate("/freedom-board");
   };
 
   useEffect(() => {
     const fetchUser = async () => {
       const userCollection = collection(db, "users"); // Assuming the collection is named "users"
       const snapshot = await getDocs(userCollection);
-      const userData: DocumentData[] = snapshot.docs.map((doc) => doc.data());
+      const userData: any[] = snapshot.docs.map((doc) => doc.data());
       setUser(userData);
     };
 
@@ -74,22 +54,26 @@ const PublicBoard = () => {
   return (
     <>
       <NavBar />
-      <Button children="Create Note" onClick={handleClick} />
-      <div className="container justify-content-around">
-        <div className="row">
-          {user.map((userData, index) => (
-            <div className="col-auto" key={index}>
-              <StickyNote
-                heading={
-                  <div className="fs-6">
-                    Anonymous "{getRandomWord()}" Wrote:
-                  </div>
-                }
-                message={<div className="fs-6">{userData.text}</div>}
-                foot={formatTimestamp(userData.timestamp)} // Format timestamp
-              />
+      <div id="note_area">
+        <div className="container">
+            <div className="note_area_holder">
+              <div className="create_note">
+                <Button children="Create Note" onClick={handleClick} />
+              </div>
+              <div className="note_flex">
+
+                  {user.map((userData, index) => (
+                      <StickyNote 
+                        key={index}
+                        heading={`Anonymous "${getRandomWord()}" Wrote:`} 
+                        message={userData.text}
+                        foot={formatTimestamp(userData.timestamp)} // Format timestamp
+                      />
+                      
+                  ))}
+                    </div>
+
             </div>
-          ))}
         </div>
       </div>
       <Footer />
