@@ -7,7 +7,7 @@
     --black: #0b0b0b;
     --white: #f2efef;
 }
-body, html{overflow: hidden;}
+body, html{overflow-x: hidden;}
 * {padding: 0; margin: 0; list-style: none; text-decoration: none; font-weight: normal;font-family: var(--font2);clear: both;white-space: unset;}
 .container{position: relative; margin: auto; width: 100%; max-width: 1300px;}
 
@@ -32,7 +32,7 @@ small{font-family: var(--font2);}
 
 #slogan_area{position: relative;}
 .slogan_video{width: 1920px;margin-left: 50%;transform: translate(-50%);position: relative;height: 813px;overflow: hidden;}
-.slogan_video video{ max-width: 1680px; width: 100%;height: 100%;object-fit: cover;object-position: right;filter: brightness(50%);}
+.slogan_video video{width: 100%;height: 100%;object-fit: cover;object-position: right;filter: brightness(50%);}
 
 .slogan_info{position: absolute;top: 37%;left: 50%;transform: translateX(-50%);text-align: center;color: var(--white);width: 100%;}
 .slogan_info h2{font-size: calc(clamp(1.875rem, 2.564vw + 1.298rem, 4.375rem));}

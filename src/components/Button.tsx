@@ -1,16 +1,15 @@
 import { ReactNode } from "react";
+
 interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
-  onSelect?: () => void;
-  onSubmit?: () => void;
-  type?: () => void;
-  className?: ()=> void;
+  type?: "button" | "submit" | "reset";
 }
 
-const Button = ({ children, onClick }: ButtonProps) => {
+const Button = ({ children, onClick, type = "button" }: ButtonProps) => {
   return (
-      <a href="" className="cust_btn" onClick={onClick} type="submit">{children}</a>      
+    <a className="cust_btn" onClick={onClick} type={type}> {children} </a>
   );
 };
+
 export default Button;

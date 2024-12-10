@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import db from "../db/firebase-config";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
 
 function FreedomBoard() {
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ function FreedomBoard() {
                 </div>
                 <div className="form_floating">
                     <textarea className={`form-control ${charCount >= 300 ? "text-danger" : ""}`} placeholder="Express your thoughts here." value={text} maxLength={300} onChange={handleChange}></textarea>
-                    <a className="cust_btn" href="" children="Post to board" onClick={handleClick}></a>
+                    <Button onClick={handleClick}>Post to board</Button>
                 </div>
             </div>
         </div>

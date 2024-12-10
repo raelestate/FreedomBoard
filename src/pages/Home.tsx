@@ -20,7 +20,7 @@ function Home() {
           </div>
           <div className="slogan_info">
             <h2>
-              Your Space, Your Voice, <span>No Names.</span>
+              Your Space, Your Voice, <span>Freedom Board</span>
             </h2>
             <p>An open platform to share your thoughts freely and anonymously.</p>
             <Button children="Get Started" onClick={handleClick} />
