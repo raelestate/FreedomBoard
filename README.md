@@ -4,6 +4,10 @@
 
 ---
 
+🌐 **Visit us at:** [https://freedomboard.netlify.app/](https://freedomboard.netlify.app/)
+
+---
+
 🌟 **What is Freedom Board?**  
 Freedom Board is your personal space to express thoughts, ideas, and creativity without limits—well, **almost**! Whether you want to share your innermost thoughts, unleash your creativity, or document your journey, this is your canvas to do it all.
 
