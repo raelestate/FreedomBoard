@@ -40,4 +40,18 @@ You decide where the line is, ensuring your expressions stay true to your values
 
 ---
 
+### 🛠️ **Tech Stack**  
+- **Frontend:**  
+  - HTML  
+  - CSS  
+  - JavaScript  
+  - React  
+  - Vite  
+  - TypeScript  
+
+- **Backend:**  
+  - Firebase
+
+---
+
 🔗 **Check out more projects on [RaelEstate](https://github.com/raelestate)** 🌐
