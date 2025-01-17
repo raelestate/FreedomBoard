@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self'; 
-    script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; 
+    script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.gstatic.com; 
     style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
     img-src 'self' data:; 
-    connect-src 'self'; 
+    connect-src 'self' https://firestore.googleapis.com https://www.googleapis.com; 
     font-src 'self' https://fonts.gstatic.com; 
   ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,8 +23,12 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Freedom Board" />
   <meta name="twitter:description" content="Explore the Freedom Board – your go-to platform for community discussions, resources, and insights." />
-  <link rel="shortcut icon" href="/assets/f-DaS14Ssz.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/assets/f-DaS14Ssz.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+  <!-- Preloads -->
   <script type="module" crossorigin src="/assets/index-DKrfMOFt.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/react-BrP7bTIu.js">
   <link rel="modulepreload" crossorigin href="/assets/scheduler-CzFDRTuY.js">
@@ -41,11 +45,11 @@
 <body>
   <div id="root"></div>
   
-  <!-- Scripts -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>
