@@ -3,21 +3,29 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self'; 
+    script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; 
+    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
+    img-src 'self' data:; 
+    connect-src 'self'; 
+    font-src 'self' https://fonts.gstatic.com; 
+  ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Freedom Board | Rael Estate</title>
-  <meta name="description" content="Welcome to the Freedom Board by Rael Estate. Stay updated with the latest community insights, discussions, and resources for all things Freedom Board and beyond." />
-  <meta name="keywords" content="Freedom Board, Rael Estate, community board, discussions, Freedom Board platform, resources, community insights" />
-  <meta name="author" content="Rael Estate" />
+  <title>Freedom Board</title>
+  <meta name="description" content="Welcome to the Freedom Board. Stay updated with the latest community insights, discussions, and resources for all things Freedom Board and beyond." />
+  <meta name="keywords" content="Freedom Board, community board, discussions, Freedom Board platform, resources, community insights" />
+  <meta name="author" content="Your Name" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Freedom Board | Rael Estate" />
-  <meta property="og:description" content="Join the Freedom Board by Rael Estate for the latest discussions, insights, and resources tailored for the Freedom Board community." />
+  <meta property="og:title" content="Freedom Board" />
+  <meta property="og:description" content="Join the Freedom Board for the latest discussions, insights, and resources tailored for the Freedom Board community." />
   <meta property="og:url" content="https://freedomboard.netlify.app/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Freedom Board | Rael Estate" />
-  <meta name="twitter:description" content="Explore the Freedom Board by Rael Estate – your go-to platform for community discussions, resources, and insights." />
-  <link rel="shortcut icon" href="/assets/f-DaS14Ssz.ico" type="image/x-icon" />
-
-  <script type="module" crossorigin src="/assets/index-CIvlYMCP.js"></script>
+  <meta name="twitter:title" content="Freedom Board" />
+  <meta name="twitter:description" content="Explore the Freedom Board – your go-to platform for community discussions, resources, and insights." />
+  <link rel="shortcut icon" href="/assets/f-DaS14Ssz.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <script type="module" crossorigin src="/assets/index-DKrfMOFt.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/react-BrP7bTIu.js">
   <link rel="modulepreload" crossorigin href="/assets/scheduler-CzFDRTuY.js">
   <link rel="modulepreload" crossorigin href="/assets/react-dom-BtizlmEl.js">
@@ -27,16 +35,17 @@
   <link rel="modulepreload" crossorigin href="/assets/idb-BXWtuYvb.js">
   <link rel="modulepreload" crossorigin href="/assets/@firebase-5-xeI3X3.js">
   <link rel="modulepreload" crossorigin href="/assets/firebase-DeWXltjH.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-B5BB37BZ.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-tQL0I8lZ.css">
 </head>
 
 <body>
   <div id="root"></div>
-
+  
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="assets/script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
